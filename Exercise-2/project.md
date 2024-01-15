@@ -31,3 +31,31 @@
 ![grep-2](../Exercise-2/images/grep-2.PNG)
 
 ![grep-etc](../Exercise-2/images/grep-etc.PNG)
+
+- grep has another option which is R, ehich is to search for directories too and option v which means ot search for argument provided
+`grep -v five dev12.txt`
+![grep-v](../Exercise-2/images/grep-vi.PNG)
+
+
+5.  less is another command that is called reader, you can also search while using this command
+
+`less dev12.txt`
+![less](../Exercise-2/images/less.PNG)
+
+6.  more is another reader
+`more dev12.txt`
+
+![more](../Exercise-2/images/more.PNG)
+
+7. Tail is used to show the last to content of a file
+![tail](../Exercise-2/images/tail.PNG)
+
+
+8. Head is used to show the first 10 content of a file
+
+![head](../Exercise-2/images/head.PNG)
+
+9. cut command is used to cut out the needed information
+
+10. sed command is used to search and replace word
+`sed -i 's/covid19/coronavirus/g' *`
