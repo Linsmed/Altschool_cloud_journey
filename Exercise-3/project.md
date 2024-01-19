@@ -1,6 +1,8 @@
 ## Submit the content of 
 1. etc/passwd
+
 ` cat /etc/passwd`
+
 ![etc](../Exercise-3/Images/etc-passwd.PNG)
 
 2. etc/group
@@ -12,6 +14,4 @@
 
 `sudo cat /etc/sudoers`
 
-![](../Exercise-3/Images/sudoers.PNG
-
-)
+![](../Exercise-3/Images/sudoers.PNG)
