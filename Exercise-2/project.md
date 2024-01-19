@@ -59,3 +59,9 @@
 
 10. sed command is used to search and replace word
 `sed -i 's/covid19/coronavirus/g' *`
+
+11. Groupadd is used to add username to a group
+12. groupmod is used to change the name of a group to a new name
+13. groupdel is used to delete a group
+
+![mod](../Exercise-2/images/modify.PNG)
