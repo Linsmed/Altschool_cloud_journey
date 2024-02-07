@@ -7,12 +7,12 @@
 
 `mkdir code tests personal misc` to create the subdirectories
 
-![directory](../Live-class-assignment-1/images/directories.PNG)
+![directory](../Live-class-assignment-1/images/direc.PNG)
 
 
 1. Change directory to the tests directory using absolute pathname
 
-`cd /home/vagrant tests`
+`cd /home/vagrant/tests`
 
 ![absolute-path](../Live-class-assignment-1/images/Absolute-path.PNG)
 
@@ -24,13 +24,13 @@
 
 3. Use echo command to create a file named fileA with text content ‘Hello A’ in the misc directory
 
-` echo "Hello A" > /home/vagrant/misc/fileA`
+` sudo echo "Hello A" > /home/vagrant/misc/fileA`
 
 ![echo](../Live-class-assignment-1/images/echo.PNG)
 
 4. Create an empty file named fileB in the misc directory. Populate the file with a dummy content afterwards
 
-`vim /home/vagrant/misc/fileB`
+`sudo vim /home/vagrant/misc/fileB`
 
 ![dummy-content](../Live-class-assignment-1/images/dummy-content1.PNG)
 
@@ -74,7 +74,7 @@
 
 11. Create a user with no login shell
 
-`sudo adduser testuser1 --shell /usr/sbin/nologin`
+`sudo adduser ejibode --shell /usr/sbin/nologin`
 
 ![no-login](../Live-class-assignment-1/images/nologin.PNG)
 
