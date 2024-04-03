@@ -1,0 +1,77 @@
+---
+
+- hosts: all
+  become: yes
+  tasks:
+    - name: install updates (CentOS)
+      yum:
+        update_only: yes
+        update_cache: yes
+      when: ansible_distribution == "CentOS"
+
+    - name: install updates (Ubuntu)
+      apt:
+        upgrade: yes
+        update_cache: yes
+      when: ansible_distribution == "Ubuntu"
+
+- hosts: all
+  become: yes
+  tasks:
+    - name: install apache2
+      tags: apache2,ubuntu,apache
+      package:
+        name:
+          - "{{ Apache_package_name }}"
+        state: latest
+
+
+    - name: start httpd
+      tags: httpd,centos
+      service:
+        name: httpd
+        state: started
+        enabled: yes
+      when: ansible_distribution == "CentOS"
+
+    - name: start and enable firewalld
+      tags: httpd,centos
+      service:
+        name: firewalld
+        state: started
+        enabled: yes
+      when: ansible_distribution == "CentOS"
+
+    - name: open port 80 on firewall
+      tags: httpd,centos
+      firewalld:
+        service: http
+        permanent: yes
+        state: enabled
+      when: ansible_distribution == "CentOS"
+      notify:
+        - Reload firewalld
+
+
+        - name: Reload firewalld service
+      service:
+        name: firewalld
+        state: reloaded
+      when: ansible_distribution == "CentOS"
+
+    - name: copy git
+      tags: apache2,ubuntu,apache
+      copy:
+          src: /home/vagrant/ansible-repo/altshoo-assignment/repo/alt_sch_assignment3
+          dest: /var/www/html/
+          owner: devops
+          group: devops
+           mode: '0644'
+
+ #   - name: copy git
+#      tags: apache2,ubuntu,apache
+  #    synchronize:
+   #     src: /home/vagrant/ansible-repo/altshoo-assignment/repo/alt_sch_assignment3
+    #    dest: /var/www/html/
+     #   recursive: yes
+                         
