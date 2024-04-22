@@ -1,5 +1,17 @@
 #!/bin/bash
-sudo apt update -y
+
+
+# Author: Ejibode Ibraheem A
+# Date Created: 21/04/2024
+# Last Modified: 22/04/2024
+
+# Description
+#This script should clone a PHP application from GitHub, install all necessary packages, and configure Apache web server and MySQL. 
+
+# usage
+
+
+sudo apt update 
 #install your apache webserver
 sudo apt install apache2 -y
 #add the php ondrej repository
@@ -28,6 +40,8 @@ cd laravel/
 install composer autoloader
 composer install --optimize-autoloader --no-dev --no-interaction
 composer update --no-interaction
+
+
 #copy the content of the default env file to .env
 sudo cp .env.example .env
 sudo chown -R www-data storage
